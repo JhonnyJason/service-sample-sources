@@ -1,7 +1,7 @@
-import configmodule from "./configmodule"
-import debugmodule from   "./debugmodule"
-import scimodule from "./scimodule"
-import startupmodule from "./startupmodule"
+import * as configmodule from "./configmodule.js"
+import * as debugmodule from   "./debugmodule.js"
+import * as scimodule from "./scimodule.js"
+import * as startupmodule from "./startupmodule.js"
 
 Modules = {
     configmodule,
