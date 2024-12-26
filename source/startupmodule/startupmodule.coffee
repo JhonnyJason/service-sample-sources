@@ -1,25 +1,15 @@
-
-startupmodule = {name: "startupmodule"}
-
-#log Switch
-log = (arg) ->
-    if allModules.debugmodule.modulesToDebug["startupmodule"]?  then console.log "[startupmodule]: " + arg
-    return
-
-#region internal variables
-sci = null
+############################################################
+#region debug
+import { createLogFunctions } from "thingy-debug"
+{log, olog} = createLogFunctions("startupmodule")
 #endregion
 
-##initialization function  -> is automatically being called!  ONLY RELY ON DOM AND VARIABLES!! NO PLUGINS NO OHTER INITIALIZATIONS!!
-startupmodule.initialize = () ->
-    log "startupmodule.initialize"
-    sci = allModules.scimodule
+############################################################
+import * as sci from "./scimodule.js"
 
-#region exposed functions
-startupmodule.serviceStartup = ->
-    log "startupmodule.serviceStartup"
+############################################################
+export serviceStartup = ->
+    log "serviceStartup"
+    # other startup moves
     sci.prepareAndExpose()
-
-#endregion exposed functions
-
-export default startupmodule
+    return
