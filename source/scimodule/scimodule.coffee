@@ -14,7 +14,7 @@ import * as sciBase from "thingy-sci-base"
 ############################################################
 routes = {}
 
-routes["sampleRoute"] = (res, req) ->
+routes["sampleRoute"] = (req, res) ->
     # req.body is our json
     # handle
     res.send("Hello World!")
